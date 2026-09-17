@@ -12,12 +12,12 @@ robot:
   joints:
     status: names_to_verify_against_asset
     ordered_names:
-      - shoulder_pan
-      - shoulder_lift
-      - elbow_flex
-      - wrist_flex
-      - wrist_roll
-      - gripper
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_flex_joint
+      - wrist_flex_joint
+      - wrist_roll_joint
+      - gripper_joint
   end_effector:
     tcp_site: gripperframe
     status: verify_origin_and_axes_in_mujoco
