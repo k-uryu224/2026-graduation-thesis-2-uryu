@@ -1,0 +1,6 @@
+Loaded MuJoCo model: /home/k-uryu/2026-graduation-thesis-2-uryu/assets/robots/so101/so_arm101_description/mjcf/scene.xml
+Model sizes: nq=6, nv=6, nu=6, nbody=8, ngeom=31, nsite=2, ncam=0
+MuJoCo timestep: 0.002 s
+Joints: shoulder_pan_joint, shoulder_lift_joint, elbow_flex_joint, wrist_flex_joint, wrist_roll_joint, gripper_joint
+Sites: baseframe, gripperframe
+Cameras: (none)
