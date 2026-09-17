@@ -1,0 +1,34 @@
+experiment:
+  id: response_comparison_v0
+  phase: phase_1_response_characterization
+  description: Compare local policy responses of pi05 and SmolVLA under shared SO-101 conditions.
+  status: draft
+
+config_refs:
+  robot: ../robot/so101.yaml
+  scene: ../scene/top_grasp.yaml
+  task: ../task/pick_object.yaml
+  dataset: ../dataset/grasp_dataset.yaml
+  policies:
+    pi05: ../policy/pi05.yaml
+    smolvla: ../policy/smolvla.yaml
+  training:
+    pi05: ../training/pi05_baseline.yaml
+    smolvla: ../training/smolvla_baseline.yaml
+
+comparison:
+  policies:
+    - pi05
+    - smolvla
+  primary_metrics:
+    - task_success
+    - action_response
+  response:
+    baseline_object_offset_m: 0.0
+    perturbed_object_offsets_m:
+      - -0.02
+      - 0.02
+    action_space: common_so101_action
+    alignment: task_phase_and_timestamp
+  go_no_go:
+    status: define_thresholds_before_phase_2

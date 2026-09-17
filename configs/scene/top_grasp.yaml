@@ -1,0 +1,33 @@
+scene:
+  id: top_grasp_v0
+  simulator: mujoco
+  world_frame: world
+  table:
+    top_height_m: null
+    status: verify_from_mujoco_geom
+  object:
+    id: box_50x50x30mm
+    asset_root: assets/objects/box
+    size_m:
+      - 0.05
+      - 0.05
+      - 0.03
+    baseline_pose:
+      frame: world
+      position_m: null
+      orientation_xyzw: null
+      status: pending_coordinate_verification
+  cameras:
+    status: names_and_extrinsics_to_verify
+    required_views:
+      - top
+      - wrist
+  perturbation:
+    type: object_translation
+    frame: world
+    axis: null
+    status: axis_to_verify_in_mujoco_viewer
+    training_offsets_m:
+      - -0.02
+      - 0.0
+      - 0.02

@@ -1,0 +1,27 @@
+robot:
+  id: so101
+  name: SO-101
+  simulator: mujoco
+  asset:
+    root: assets/robots/so101
+    model_xml: null
+    status: pending_asset_selection
+  control:
+    control_hz: 30
+    action_space: common_so101_action
+  joints:
+    status: names_to_verify_against_asset
+    ordered_names:
+      - shoulder_pan
+      - shoulder_lift
+      - elbow_flex
+      - wrist_flex
+      - wrist_roll
+      - gripper
+  end_effector:
+    tcp_site: gripperframe
+    status: verify_origin_and_axes_in_mujoco
+  units:
+    position: m
+    angle: rad
+    time: s

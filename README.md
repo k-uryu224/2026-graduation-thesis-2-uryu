@@ -36,11 +36,12 @@ R(\delta) = A(s_\delta) - A(s_0)
 
 ## Repository status
 
-現在は **v0: repository scaffold** です。
+現在は **v0: repository scaffold + config schema draft** です。
 
 - ディレクトリと責務の境界を定義済み
 - Python パッケージとしての最小構成を定義済み
 - 研究設計・座標系・データ形式・実験手順の記録場所を定義済み
+- Phase 1 用の config YAML と最小の読み込み処理を定義済み
 - MuJoCo、Mink、LeRobot、π0.5、SmolVLA の実装は未追加
 
 未実装部分を動くように見せるダミーコードは置かず、確認できた機能から小さく
@@ -114,13 +115,14 @@ pytest
 ## Documents
 
 - [`docs/research_design.md`](docs/research_design.md): 研究範囲、段階、Go / No-Go
+- [`docs/configuration.md`](docs/configuration.md): config の種類、単位、参照関係
 - [`docs/coordinate_system.md`](docs/coordinate_system.md): world / robot / TCP / object 座標
 - [`docs/dataset_format.md`](docs/dataset_format.md): episode、frame、variation、pair の仕様
 - [`docs/experiment_protocol.md`](docs/experiment_protocol.md): データ生成から評価までの手順
 
 ## Development order
 
-1. Config schema を定義する
+1. Config schema を定義する（進行中）
 2. MuJoCo model をロードし、SO-101 の joint / site / camera を確認する
 3. 座標系と `gripperframe` の意味を確定する
 4. Mink IK で Pre-grasp / Grasp / Lift を到達可能にする

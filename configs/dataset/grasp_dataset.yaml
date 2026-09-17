@@ -1,0 +1,36 @@
+dataset:
+  id: grasp_dataset_v0
+  format: lerobot
+  recording_hz: 30
+  episode_duration_s: 7.0
+  frames_per_episode: 210
+  variation:
+    shared_across_object_offsets: true
+    training_variations_per_offset: 20
+    holdout_variations: 5
+    seed: null
+  object_offsets_m:
+    training:
+      - -0.02
+      - 0.0
+      - 0.02
+    evaluation: []
+    status: evaluation_offsets_to_define_before_policy_evaluation
+  required_episode_fields:
+    - episode_id
+    - variation_id
+    - task_id
+    - instruction
+    - seed
+    - object_baseline_pose
+    - object_offset
+    - config_snapshot
+    - success
+  required_frame_fields:
+    - frame_index
+    - timestamp_s
+    - task_phase
+    - observation.images
+    - observation.state
+    - action
+    - object_pose

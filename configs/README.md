@@ -20,4 +20,16 @@ experiment/  上記 config の組み合わせと比較条件
 - 未確定値を推測で埋めず、schema と実装を確認してから追加する
 - 実験開始後に config を上書きせず、変更時は新しい実験 ID を作る
 
-各 YAML の schema は次の開発段階で定義します。
+## Entry point
+
+現在の Phase 1 用 entry point は次です。
+
+```text
+configs/experiment/response_comparison.yaml
+```
+
+この experiment config が robot、scene、task、dataset、policy、training の各 config を
+参照します。Python からは `so101_vla_response.configuration.load_experiment_bundle`
+で読み込みます。
+
+詳細は [`../docs/configuration.md`](../docs/configuration.md) を参照します。

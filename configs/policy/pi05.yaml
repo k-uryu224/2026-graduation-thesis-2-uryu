@@ -1,0 +1,9 @@
+policy:
+  id: pi05
+  model_family: pi0.5
+  role: comparison_policy
+  checkpoint: null
+  observation_adapter: null
+  action_adapter: null
+  interface: so101_vla_response.policies.base.Policy
+  status: pending_adapter_implementation

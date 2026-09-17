@@ -1,0 +1,20 @@
+task:
+  id: pick_object_top_grasp
+  instruction: Pick up the object.
+  target_object_id: box_50x50x30mm
+  phases:
+    ordered_names:
+      - home
+      - pre_grasp
+      - grasp
+      - close
+      - lift
+      - hold
+    timing_status: durations_to_define_after_ik_check
+  success:
+    status: draft_threshold_to_validate
+    lift_height_m: 0.07
+    hold_duration_s: 0.5
+  safety:
+    stop_on_ik_failure: true
+    stop_on_simulation_instability: true

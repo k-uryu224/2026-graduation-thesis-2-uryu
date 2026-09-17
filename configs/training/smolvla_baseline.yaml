@@ -1,0 +1,9 @@
+training:
+  id: smolvla_baseline
+  policy_id: smolvla
+  method: finetune
+  batch_size: null
+  steps: null
+  freeze: null
+  seeds: []
+  status: pending_model_setup
