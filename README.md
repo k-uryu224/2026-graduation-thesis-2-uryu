@@ -117,6 +117,7 @@ pytest
 
 - [`docs/research_design.md`](docs/research_design.md): 研究範囲、段階、Go / No-Go
 - [`docs/configuration.md`](docs/configuration.md): config の種類、単位、参照関係
+- [`docs/mujoco_setup.md`](docs/mujoco_setup.md): MuJoCo の導入と smoke test
 - [`docs/coordinate_system.md`](docs/coordinate_system.md): world / robot / TCP / object 座標
 - [`docs/dataset_format.md`](docs/dataset_format.md): episode、frame、variation、pair の仕様
 - [`docs/experiment_protocol.md`](docs/experiment_protocol.md): データ生成から評価までの手順
@@ -125,10 +126,11 @@ pytest
 
 1. Config schema を定義する（完了）
 2. MuJoCo environment wrapper を定義する（完了）
-3. SO-101 の MuJoCo model を選び、joint / site / camera を確認する
-4. 座標系と `gripperframe` の意味を確定する
-5. Mink IK で Pre-grasp / Grasp / Lift を到達可能にする
-6. Script trajectory を生成する
-7. LeRobot Dataset recorder を実装する
-8. π0.5 / SmolVLA adapter を実装する
-9. success と local policy response を評価する
+3. MuJoCo をインストールし、最小 smoke test を実行する
+4. SO-101 の MuJoCo model を選び、joint / site / camera を確認する
+5. 座標系と `gripperframe` の意味を確定する
+6. Mink IK で Pre-grasp / Grasp / Lift を到達可能にする
+7. Script trajectory を生成する
+8. LeRobot Dataset recorder を実装する
+9. π0.5 / SmolVLA adapter を実装する
+10. success と local policy response を評価する
