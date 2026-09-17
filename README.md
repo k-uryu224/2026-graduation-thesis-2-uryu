@@ -36,13 +36,14 @@ R(\delta) = A(s_\delta) - A(s_0)
 
 ## Repository status
 
-現在は **v0: repository scaffold + config schema draft** です。
+現在は **v0: repository scaffold + config schema draft + MuJoCo environment wrapper** です。
 
 - ディレクトリと責務の境界を定義済み
 - Python パッケージとしての最小構成を定義済み
 - 研究設計・座標系・データ形式・実験手順の記録場所を定義済み
 - Phase 1 用の config YAML と最小の読み込み処理を定義済み
-- MuJoCo、Mink、LeRobot、π0.5、SmolVLA の実装は未追加
+- MuJoCo model の load / reset / step 用の薄い wrapper を追加済み
+- Mink、LeRobot、π0.5、SmolVLA の実装は未追加
 
 未実装部分を動くように見せるダミーコードは置かず、確認できた機能から小さく
 追加します。
@@ -122,11 +123,12 @@ pytest
 
 ## Development order
 
-1. Config schema を定義する（進行中）
-2. MuJoCo model をロードし、SO-101 の joint / site / camera を確認する
-3. 座標系と `gripperframe` の意味を確定する
-4. Mink IK で Pre-grasp / Grasp / Lift を到達可能にする
-5. Script trajectory を生成する
-6. LeRobot Dataset recorder を実装する
-7. π0.5 / SmolVLA adapter を実装する
-8. success と local policy response を評価する
+1. Config schema を定義する（完了）
+2. MuJoCo environment wrapper を定義する（完了）
+3. SO-101 の MuJoCo model を選び、joint / site / camera を確認する
+4. 座標系と `gripperframe` の意味を確定する
+5. Mink IK で Pre-grasp / Grasp / Lift を到達可能にする
+6. Script trajectory を生成する
+7. LeRobot Dataset recorder を実装する
+8. π0.5 / SmolVLA adapter を実装する
+9. success と local policy response を評価する

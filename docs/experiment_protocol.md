@@ -16,6 +16,16 @@
 
 ## 2. Demonstration generation
 
+MuJoCo asset を選定したら、まず環境ロードを確認します。
+
+```bash
+uv run python scripts/check_environment.py
+```
+
+このコマンドは `configs/experiment/response_comparison.yaml` から robot config を読み、
+`robot.asset.model_xml` の MuJoCo model をロードして joint / site / camera 名を表示します。
+STEP 4 で SO-101 asset を入れるまでは、`model_xml` 未設定として失敗するのが正常です。
+
 1. scene と座標系を検証する
 2. Home / Pre-grasp / Grasp / Close / Lift / Hold の target を設定する
 3. Mink IK の到達性と joint limit を確認する
