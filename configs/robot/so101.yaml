@@ -4,7 +4,7 @@ robot:
   simulator: mujoco
   asset:
     root: assets/robots/so101
-    model_xml: so_arm101_description/mjcf/scene.xml
+    model_xml: so_arm101_description/mjcf/top_grasp_scene.xml
     status: imported_from_ros2_so_arm
   control:
     control_hz: 30
