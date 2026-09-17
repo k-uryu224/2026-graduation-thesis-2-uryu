@@ -8,7 +8,13 @@ version = "0.0.1"
 description = "SO-101 experiments for comparing local policy responses of VLA models."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "coacd>=1.0.14",
+    "daqp>=0.9.1",
+    "mink>=1.2.0",
+    "pyyaml>=6.0.3",
+    "trimesh>=5.1.0",
+]
 
 [project.optional-dependencies]
 dev = [

@@ -23,7 +23,7 @@
       <site name="table_top_center" pos="0 0 0.025" size="0.01" rgba="0 1 0 1" />
     </body>
 
-    <body name="target_box" pos="0.25 0 0.065">
+    <body name="target_box" pos="0.24 0 0.065">
       <freejoint name="target_box_freejoint" />
       <geom name="target_box_geom" type="box" size="0.025 0.025 0.015" mass="0.03" material="target_box_mat" />
       <site name="target_box_center" pos="0 0 0" size="0.01" rgba="1 0 0 1" />

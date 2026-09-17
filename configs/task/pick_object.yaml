@@ -2,6 +2,7 @@ task:
   id: pick_object_top_grasp
   instruction: Pick up the object.
   target_object_id: box_50x50x30mm
+
   phases:
     ordered_names:
       - home
@@ -10,11 +11,182 @@ task:
       - close
       - lift
       - hold
-    timing_status: durations_to_define_after_ik_check
+
+    timing:
+      rate_hz: 30.0
+      total_duration_s: 7.0
+      total_frames: 210
+
+      durations_s:
+        initial_hold: 0.5
+        home_to_pre_grasp: 2.0
+        pre_grasp_to_grasp: 1.5
+        gripper_close: 0.5
+        grasp_to_lift: 1.5
+        final_hold: 1.0
+
+    timing_status: frozen_after_physics_validation
+
+  tcp:
+    site: gripperframe
+
+    approach_axis:
+      local_axis: x
+      tilt_reference: world_negative_z
+      tilt_toward: world_positive_x
+      status: verified_from_mjcf_geometry
+
+    pinch_axis:
+      local_axis: z
+      reference_axis: world_positive_x
+      target_rule: project_reference_perpendicular_to_approach
+      cost: 0.05
+      status: frozen_after_three_position_contact_validation
+
+    targets:
+      reference: object_pose
+      frame: world
+
+      pre_grasp:
+        offset_m:
+          - 0.0
+          - 0.0
+          - 0.085
+        approach_tilt_deg: 30.0
+
+      grasp:
+        offset_m:
+          - -0.041
+          - 0.0
+          - -0.011
+        approach_tilt_deg: 5.0
+
+      # Compatibility/final lift target.
+      # Full lift path is defined under trajectory.lift_waypoints.
+      lift:
+        offset_m:
+          - -0.025
+          - 0.0
+          - 0.095
+        approach_tilt_deg: 40.0
+
+      status: frozen_after_60_of_60_variation_validation
+
+  trajectory:
+    approach:
+      strategy: reverse_lift_waypoints
+
+      waypoint_order:
+        - lift_6
+        - lift_5
+        - lift_4
+        - lift_3
+        - lift_2
+        - lift_1
+        - grasp
+
+      note: >
+        The approach reuses validated lift waypoints in reverse order
+        to prevent object contact before gripper closing.
+
+    lift_waypoints:
+      - name: lift_1
+        offset_m:
+          - -0.039
+          - 0.0
+          - 0.025
+        approach_tilt_deg: 5.0
+
+      - name: lift_2
+        offset_m:
+          - -0.031
+          - 0.0
+          - 0.035
+        approach_tilt_deg: 10.0
+
+      - name: lift_3
+        offset_m:
+          - -0.031
+          - 0.0
+          - 0.045
+        approach_tilt_deg: 15.0
+
+      - name: lift_4
+        offset_m:
+          - -0.031
+          - 0.0
+          - 0.055
+        approach_tilt_deg: 20.0
+
+      - name: lift_5
+        offset_m:
+          - -0.025
+          - 0.0
+          - 0.070
+        approach_tilt_deg: 25.0
+
+      - name: lift_6
+        offset_m:
+          - -0.025
+          - 0.0
+          - 0.080
+        approach_tilt_deg: 30.0
+
+      - name: lift_7
+        offset_m:
+          - -0.025
+          - 0.0
+          - 0.090
+        approach_tilt_deg: 35.0
+
+      - name: lift_8
+        offset_m:
+          - -0.025
+          - 0.0
+          - 0.095
+        approach_tilt_deg: 40.0
+
+    frame_allocation:
+      method: max_joint_change_weighted
+      minimum_frames_per_segment: 3
+      approach_total_frames: 45
+      lift_total_frames: 45
+
+    status: frozen_after_60_of_60_variation_validation
+
+  variation:
+    fixture: configs/trajectory/grasp_variations_v1.json
+
+    home_joint_offset_deg:
+      minimum: -2.0
+      maximum: 2.0
+
+    pre_grasp_z_offset_m:
+      minimum: -0.005
+      maximum: 0.005
+
+    count: 20
+    pairing: same_variation_ids_across_training_positions
+    status: fixed
+
   success:
-    status: draft_threshold_to_validate
-    lift_height_m: 0.07
+    metric: object_vertical_displacement
+    reference: initial_object_pose
+    minimum_lift_delta_m: 0.07
     hold_duration_s: 0.5
+    status: defined
+
+  validation:
+    training_object_x_m:
+      - 0.220
+      - 0.240
+      - 0.260
+
+    fixed_variations_per_position: 20
+    physics_trials: 60
+    physics_successes: 60
+    status: passed
+
   safety:
     stop_on_ik_failure: true
     stop_on_simulation_instability: true

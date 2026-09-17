@@ -1,0 +1,248 @@
+{
+  "id": "grasp_variations_v1",
+  "sampling": {
+    "method": "latin_hypercube",
+    "seed": 20260918,
+    "count": 20
+  },
+  "pairing": "The same variation IDs are reused at object_x = 0.220, 0.240, 0.260 m.",
+  "joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_flex_joint",
+    "wrist_flex_joint",
+    "wrist_roll_joint"
+  ],
+  "ranges": {
+    "home_joint_offset_deg": [
+      -2.0,
+      2.0
+    ],
+    "pregrasp_z_offset_m": [
+      -0.005,
+      0.005
+    ]
+  },
+  "variations": [
+    {
+      "id": "v00",
+      "home_joint_offsets_deg": [
+        1.607877,
+        0.7827,
+        0.420893,
+        -1.386193,
+        1.205182
+      ],
+      "pregrasp_z_offset_m": -0.001490272
+    },
+    {
+      "id": "v01",
+      "home_joint_offsets_deg": [
+        -1.592251,
+        1.945609,
+        -0.793835,
+        -0.027329,
+        1.973853
+      ],
+      "pregrasp_z_offset_m": -0.002463314
+    },
+    {
+      "id": "v02",
+      "home_joint_offsets_deg": [
+        1.493058,
+        1.571595,
+        -0.156071,
+        0.936445,
+        0.391575
+      ],
+      "pregrasp_z_offset_m": 0.001881148
+    },
+    {
+      "id": "v03",
+      "home_joint_offsets_deg": [
+        -1.792196,
+        -1.814346,
+        1.017024,
+        -0.912305,
+        -1.103928
+      ],
+      "pregrasp_z_offset_m": -0.003021439
+    },
+    {
+      "id": "v04",
+      "home_joint_offsets_deg": [
+        0.200222,
+        1.336373,
+        1.239543,
+        0.554884,
+        -1.639018
+      ],
+      "pregrasp_z_offset_m": 0.000474618
+    },
+    {
+      "id": "v05",
+      "home_joint_offsets_deg": [
+        -0.670481,
+        -1.769726,
+        -0.503136,
+        0.118338,
+        1.509618
+      ],
+      "pregrasp_z_offset_m": 0.004322695
+    },
+    {
+      "id": "v06",
+      "home_joint_offsets_deg": [
+        -0.872588,
+        1.719915,
+        -1.41488,
+        1.685646,
+        -1.414204
+      ],
+      "pregrasp_z_offset_m": -0.00040102
+    },
+    {
+      "id": "v07",
+      "home_joint_offsets_deg": [
+        1.011466,
+        -1.293604,
+        0.14244,
+        1.503127,
+        0.921834
+      ],
+      "pregrasp_z_offset_m": -0.00406308
+    },
+    {
+      "id": "v08",
+      "home_joint_offsets_deg": [
+        1.236106,
+        0.116922,
+        -1.789563,
+        -1.446638,
+        -0.85576
+      ],
+      "pregrasp_z_offset_m": 0.002771764
+    },
+    {
+      "id": "v09",
+      "home_joint_offsets_deg": [
+        0.421362,
+        -0.608368,
+        1.656511,
+        -0.713772,
+        -1.836618
+      ],
+      "pregrasp_z_offset_m": -0.003771474
+    },
+    {
+      "id": "v10",
+      "home_joint_offsets_deg": [
+        -0.03403,
+        1.122474,
+        1.873484,
+        -0.283734,
+        -0.159973
+      ],
+      "pregrasp_z_offset_m": 0.004798937
+    },
+    {
+      "id": "v11",
+      "home_joint_offsets_deg": [
+        0.758733,
+        -0.482972,
+        -0.370354,
+        -1.123327,
+        -0.657329
+      ],
+      "pregrasp_z_offset_m": 0.000647201
+    },
+    {
+      "id": "v12",
+      "home_joint_offsets_deg": [
+        -1.366686,
+        0.491948,
+        -1.094114,
+        1.881004,
+        1.695066
+      ],
+      "pregrasp_z_offset_m": -0.000914747
+    },
+    {
+      "id": "v13",
+      "home_joint_offsets_deg": [
+        -1.035556,
+        0.214189,
+        -1.888204,
+        0.315339,
+        0.525411
+      ],
+      "pregrasp_z_offset_m": 0.001437616
+    },
+    {
+      "id": "v14",
+      "home_joint_offsets_deg": [
+        1.919954,
+        -1.191101,
+        -1.249025,
+        0.721439,
+        -0.498531
+      ],
+      "pregrasp_z_offset_m": -0.004760302
+    },
+    {
+      "id": "v15",
+      "home_joint_offsets_deg": [
+        0.967946,
+        -0.186418,
+        1.498563,
+        -1.626747,
+        0.686019
+      ],
+      "pregrasp_z_offset_m": 0.002389649
+    },
+    {
+      "id": "v16",
+      "home_joint_offsets_deg": [
+        -1.948517,
+        -1.443611,
+        -0.922494,
+        1.356455,
+        0.081716
+      ],
+      "pregrasp_z_offset_m": -0.00199741
+    },
+    {
+      "id": "v17",
+      "home_joint_offsets_deg": [
+        -0.286965,
+        0.933474,
+        0.613049,
+        1.117779,
+        1.149909
+      ],
+      "pregrasp_z_offset_m": -0.00285026
+    },
+    {
+      "id": "v18",
+      "home_joint_offsets_deg": [
+        0.146372,
+        -0.372788,
+        0.83901,
+        -0.550367,
+        -0.244575
+      ],
+      "pregrasp_z_offset_m": 0.003436039
+    },
+    {
+      "id": "v19",
+      "home_joint_offsets_deg": [
+        -0.502245,
+        -0.819919,
+        0.261121,
+        -1.858052,
+        -1.382963
+      ],
+      "pregrasp_z_offset_m": 0.003500681
+    }
+  ]
+}

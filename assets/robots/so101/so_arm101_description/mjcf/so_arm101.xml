@@ -9,6 +9,30 @@
     <mesh file="motor_holder_so101_base_v1.stl" />
     <mesh file="wrist_roll_follower_so101_v1.stl" />
     <mesh file="moving_jaw_so101_v1.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_01" file="collision/wrist_roll_follower_so101_v1_hull_01.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_02" file="collision/wrist_roll_follower_so101_v1_hull_02.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_03" file="collision/wrist_roll_follower_so101_v1_hull_03.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_04" file="collision/wrist_roll_follower_so101_v1_hull_04.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_05" file="collision/wrist_roll_follower_so101_v1_hull_05.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_06" file="collision/wrist_roll_follower_so101_v1_hull_06.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_07" file="collision/wrist_roll_follower_so101_v1_hull_07.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_08" file="collision/wrist_roll_follower_so101_v1_hull_08.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_09" file="collision/wrist_roll_follower_so101_v1_hull_09.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_10" file="collision/wrist_roll_follower_so101_v1_hull_10.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_11" file="collision/wrist_roll_follower_so101_v1_hull_11.stl" />
+    <mesh name="wrist_roll_follower_so101_v1_hull_12" file="collision/wrist_roll_follower_so101_v1_hull_12.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_01" file="collision/moving_jaw_so101_v1_hull_01.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_02" file="collision/moving_jaw_so101_v1_hull_02.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_03" file="collision/moving_jaw_so101_v1_hull_03.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_04" file="collision/moving_jaw_so101_v1_hull_04.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_05" file="collision/moving_jaw_so101_v1_hull_05.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_06" file="collision/moving_jaw_so101_v1_hull_06.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_07" file="collision/moving_jaw_so101_v1_hull_07.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_08" file="collision/moving_jaw_so101_v1_hull_08.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_09" file="collision/moving_jaw_so101_v1_hull_09.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_10" file="collision/moving_jaw_so101_v1_hull_10.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_11" file="collision/moving_jaw_so101_v1_hull_11.stl" />
+    <mesh name="moving_jaw_so101_v1_hull_12" file="collision/moving_jaw_so101_v1_hull_12.stl" />
     <mesh file="base_motor_holder_so101_v1.stl" />
     <mesh file="upper_arm_so101_v1.stl" />
     <mesh file="wrist_roll_pitch_so101_v2.stl" />
@@ -356,7 +380,84 @@
                   class="collision"
                   pos="8.32667e-17 -0.000218214 0.000949706"
                   quat="0 1 0 0"
-                  mesh="wrist_roll_follower_so101_v1"
+                  mesh="wrist_roll_follower_so101_v1_hull_01"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_02"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_03"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_04"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_05"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_06"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_07"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_08"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_09"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_10"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_11"
+                  material="3d_printed"
+                />
+                <geom
+                  class="collision"
+                  pos="8.32667e-17 -0.000218214 0.000949706"
+                  quat="0 1 0 0"
+                  mesh="wrist_roll_follower_so101_v1_hull_12"
                   material="3d_printed"
                 />
                 <site
@@ -394,7 +495,84 @@
                     class="collision"
                     pos="-5.55112e-17 -5.55112e-17 0.0189"
                     quat="1 -0 3.00524e-16 -2.00834e-17"
-                    mesh="moving_jaw_so101_v1"
+                    mesh="moving_jaw_so101_v1_hull_01"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_02"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_03"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_04"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_05"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_06"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_07"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_08"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_09"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_10"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_11"
+                    material="3d_printed"
+                  />
+                  <geom
+                    class="collision"
+                    pos="-5.55112e-17 -5.55112e-17 0.0189"
+                    quat="1 -0 3.00524e-16 -2.00834e-17"
+                    mesh="moving_jaw_so101_v1_hull_12"
                     material="3d_printed"
                   />
                 </body>
