@@ -4,8 +4,8 @@ robot:
   simulator: mujoco
   asset:
     root: assets/robots/so101
-    model_xml: null
-    status: pending_asset_selection
+    model_xml: so_arm101_description/mjcf/scene.xml
+    status: imported_from_ros2_so_arm
   control:
     control_hz: 30
     action_space: common_so101_action
