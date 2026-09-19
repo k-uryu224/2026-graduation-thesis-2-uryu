@@ -460,6 +460,12 @@
                   mesh="wrist_roll_follower_so101_v1_hull_12"
                   material="3d_printed"
                 />
+                <camera
+                  name="wrist"
+                  pos="0.0025 0.0675 -0.0062"
+                  quat="0.000001 0.000000 0.215541 0.976495"
+                  fovy="58"
+                />
                 <site
                   group="5"
                   name="gripperframe"

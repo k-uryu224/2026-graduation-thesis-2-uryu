@@ -1,0 +1,63 @@
+version: 1
+
+robot_type: so101_mujoco
+
+fps: 30
+task: "Pick up the object."
+
+images:
+  height: 480
+  width: 640
+  dtype: uint8
+  use_videos: true
+
+cameras:
+  top:
+    mujoco_name: top
+    lerobot_key: observation.images.top
+
+  wrist:
+    mujoco_name: wrist
+    lerobot_key: observation.images.wrist
+
+state:
+  mujoco_joints:
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_flex_joint
+    - wrist_flex_joint
+    - wrist_roll_joint
+    - gripper_joint
+
+  names:
+    - shoulder_pan.pos
+    - shoulder_lift.pos
+    - elbow_flex.pos
+    - wrist_flex.pos
+    - wrist_roll.pos
+    - gripper.pos
+
+  units:
+    - rad
+    - rad
+    - rad
+    - rad
+    - rad
+    - normalized_0_1
+
+action:
+  names:
+    - shoulder_pan.pos
+    - shoulder_lift.pos
+    - elbow_flex.pos
+    - wrist_flex.pos
+    - wrist_roll.pos
+    - gripper.pos
+
+  units:
+    - rad
+    - rad
+    - rad
+    - rad
+    - rad
+    - normalized_0_1
