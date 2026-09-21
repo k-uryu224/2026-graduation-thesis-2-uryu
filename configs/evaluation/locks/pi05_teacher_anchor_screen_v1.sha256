@@ -1,0 +1,2 @@
+3e9ae65f96b82ce3eae5274b23841b07909c9beba1002911796cfe206211213a  scripts/evaluate_pi05_closed_loop_batch.py
+ce9c595be2bb05004c6bcc8fc281f7eddb3d8edd57a4b558b1ae3d8af603686e  configs/evaluation/pi05_teacher_anchor_screen_v1.json
