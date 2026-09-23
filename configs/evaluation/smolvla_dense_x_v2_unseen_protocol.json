@@ -1,0 +1,32 @@
+{
+  "experiment": "smolvla_baseline_dense_x_v2",
+  "evaluation": "unseen_x",
+  "checkpoint": "030000",
+  "checkpoint_path": "outputs/train/smolvla_baseline_dense_x_v2/checkpoints/030000/pretrained_model",
+  "object_x_m": [
+    0.225,
+    0.235,
+    0.245,
+    0.255
+  ],
+  "training_anchor_x_m": [
+    0.22,
+    0.23,
+    0.24,
+    0.25,
+    0.26
+  ],
+  "variations_per_position": 20,
+  "noise_seeds": [
+    20260920,
+    20260921,
+    20260922,
+    20260923,
+    20260924
+  ],
+  "frames_per_trial": 210,
+  "trials_per_position": 100,
+  "total_trials": 400,
+  "checkpoint_selection": "fixed_final_030000",
+  "unseen_results_used_for_checkpoint_selection": false
+}
