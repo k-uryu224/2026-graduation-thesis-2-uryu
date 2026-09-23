@@ -1,0 +1,20 @@
+{
+  "experiment": "pi05_teacher_dense_x_v2",
+  "selection_data": "training_anchors_only",
+  "training_anchor_x_m": [0.220, 0.230, 0.240, 0.250, 0.260],
+  "variations_per_position": 20,
+  "noise_seeds": [20260920, 20260921, 20260922, 20260923, 20260924],
+  "trials_per_checkpoint": 500,
+  "selection_criterion": "highest aggregate closed-loop success rate over all training-anchor trials",
+  "checkpoint_results": {
+    "005000": {"successes": 210, "trials": 500, "rate": 0.420},
+    "010000": {"successes": 362, "trials": 500, "rate": 0.724},
+    "015000": {"successes": 371, "trials": 500, "rate": 0.742},
+    "020000": {"successes": 371, "trials": 500, "rate": 0.742},
+    "025000": {"successes": 393, "trials": 500, "rate": 0.786},
+    "030000": {"successes": 399, "trials": 500, "rate": 0.798}
+  },
+  "selected_checkpoint": "030000",
+  "selected_checkpoint_path": "outputs/train/pi05_teacher_dense_x_v2/checkpoints/030000/pretrained_model",
+  "unseen_x_m_not_used_for_selection": [0.225, 0.235, 0.245, 0.255]
+}
