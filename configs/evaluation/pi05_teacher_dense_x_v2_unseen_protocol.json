@@ -1,0 +1,14 @@
+{
+  "experiment": "pi05_teacher_dense_x_v2",
+  "evaluation": "unseen_x",
+  "selected_checkpoint": "030000",
+  "checkpoint_path": "outputs/train/pi05_teacher_dense_x_v2/checkpoints/030000/pretrained_model",
+  "object_x_m": [0.225, 0.235, 0.245, 0.255],
+  "training_anchor_x_m": [0.220, 0.230, 0.240, 0.250, 0.260],
+  "variations_per_position": 20,
+  "noise_seeds": [20260920, 20260921, 20260922, 20260923, 20260924],
+  "frames_per_trial": 210,
+  "trials_per_position": 100,
+  "total_trials": 400,
+  "checkpoint_selection_used_unseen_results": false
+}
