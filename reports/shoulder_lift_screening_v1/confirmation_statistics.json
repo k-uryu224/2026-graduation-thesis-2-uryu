@@ -1,0 +1,313 @@
+{
+  "analysis_id": "shoulder_lift_screening_v1_confirmation_statistics",
+  "source_git_commit": "93dc5f61ac57d6b75e102ed371aa473a0f06f562",
+  "models": [
+    "smolvla",
+    "pi05"
+  ],
+  "confirmation_offsets_deg": [
+    -6.0,
+    -5.0,
+    -4.0,
+    5.0,
+    6.0
+  ],
+  "paired_unit": "same shoulder_lift offset x variation_id x noise_seed",
+  "trials_per_offset": 45,
+  "primary_endpoint": "binary task success",
+  "primary_test": "exact two-sided McNemar test",
+  "multiple_testing": {
+    "family": "five pre-selected confirmation offsets",
+    "method": "Bonferroni",
+    "number_of_tests": 5,
+    "familywise_alpha": 0.05
+  },
+  "confidence_interval": {
+    "metric": "individual-model success rate",
+    "method": "Wilson score",
+    "level": 0.95
+  },
+  "primary_results": [
+    {
+      "shoulder_lift_offset_deg": -6.0,
+      "n_paired_trials": 45,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 2.2222222222222223,
+      "smolvla_wilson95_low_pct": 0.3933598882833428,
+      "smolvla_wilson95_high_pct": 11.56668176841488,
+      "pi05_successes": 20,
+      "pi05_success_rate_pct": 44.44444444444444,
+      "pi05_wilson95_low_pct": 30.938930034997586,
+      "pi05_wilson95_high_pct": 58.82386550647895,
+      "pi05_minus_smolvla_pp": 42.22222222222222,
+      "both_success": 1,
+      "smolvla_only": 0,
+      "pi05_only": 19,
+      "both_fail": 25,
+      "mcnemar_exact_two_sided_p": 3.814697265625e-06,
+      "bonferroni_adjusted_p": 1.9073486328125e-05,
+      "significant_after_bonferroni_0_05": true,
+      "favored_model": "pi05"
+    },
+    {
+      "shoulder_lift_offset_deg": -5.0,
+      "n_paired_trials": 45,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 2.2222222222222223,
+      "smolvla_wilson95_low_pct": 0.3933598882833428,
+      "smolvla_wilson95_high_pct": 11.56668176841488,
+      "pi05_successes": 19,
+      "pi05_success_rate_pct": 42.22222222222222,
+      "pi05_wilson95_low_pct": 28.9687024672703,
+      "pi05_wilson95_high_pct": 56.69921129079686,
+      "pi05_minus_smolvla_pp": 40.0,
+      "both_success": 1,
+      "smolvla_only": 0,
+      "pi05_only": 18,
+      "both_fail": 26,
+      "mcnemar_exact_two_sided_p": 7.62939453125e-06,
+      "bonferroni_adjusted_p": 3.814697265625e-05,
+      "significant_after_bonferroni_0_05": true,
+      "favored_model": "pi05"
+    },
+    {
+      "shoulder_lift_offset_deg": -4.0,
+      "n_paired_trials": 45,
+      "smolvla_successes": 3,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "smolvla_wilson95_low_pct": 2.293203259925099,
+      "smolvla_wilson95_high_pct": 17.856601963591896,
+      "pi05_successes": 19,
+      "pi05_success_rate_pct": 42.22222222222222,
+      "pi05_wilson95_low_pct": 28.9687024672703,
+      "pi05_wilson95_high_pct": 56.69921129079686,
+      "pi05_minus_smolvla_pp": 35.55555555555556,
+      "both_success": 2,
+      "smolvla_only": 1,
+      "pi05_only": 17,
+      "both_fail": 25,
+      "mcnemar_exact_two_sided_p": 0.00014495849609375,
+      "bonferroni_adjusted_p": 0.00072479248046875,
+      "significant_after_bonferroni_0_05": true,
+      "favored_model": "pi05"
+    },
+    {
+      "shoulder_lift_offset_deg": 5.0,
+      "n_paired_trials": 45,
+      "smolvla_successes": 31,
+      "smolvla_success_rate_pct": 68.88888888888889,
+      "smolvla_wilson95_low_pct": 54.33519442263318,
+      "smolvla_wilson95_high_pct": 80.47130073634659,
+      "pi05_successes": 10,
+      "pi05_success_rate_pct": 22.22222222222222,
+      "pi05_wilson95_low_pct": 12.544685532626396,
+      "pi05_wilson95_high_pct": 36.269292174756295,
+      "pi05_minus_smolvla_pp": -46.666666666666664,
+      "both_success": 3,
+      "smolvla_only": 28,
+      "pi05_only": 7,
+      "both_fail": 7,
+      "mcnemar_exact_two_sided_p": 0.0005082604475319386,
+      "bonferroni_adjusted_p": 0.0025413022376596928,
+      "significant_after_bonferroni_0_05": true,
+      "favored_model": "smolvla"
+    },
+    {
+      "shoulder_lift_offset_deg": 6.0,
+      "n_paired_trials": 45,
+      "smolvla_successes": 28,
+      "smolvla_success_rate_pct": 62.22222222222222,
+      "smolvla_wilson95_low_pct": 47.62993448088954,
+      "smolvla_wilson95_high_pct": 74.8919153278621,
+      "pi05_successes": 8,
+      "pi05_success_rate_pct": 17.77777777777778,
+      "pi05_wilson95_low_pct": 9.294389514104148,
+      "pi05_wilson95_high_pct": 31.329824626459768,
+      "pi05_minus_smolvla_pp": -44.44444444444444,
+      "both_success": 6,
+      "smolvla_only": 22,
+      "pi05_only": 2,
+      "both_fail": 15,
+      "mcnemar_exact_two_sided_p": 3.5881996154785156e-05,
+      "bonferroni_adjusted_p": 0.00017940998077392578,
+      "significant_after_bonferroni_0_05": true,
+      "favored_model": "smolvla"
+    }
+  ],
+  "noise_seed_stratified_results": [
+    {
+      "shoulder_lift_offset_deg": -6.0,
+      "noise_seed": 20261002,
+      "n_variations": 15,
+      "smolvla_successes": 0,
+      "smolvla_success_rate_pct": 0.0,
+      "pi05_successes": 8,
+      "pi05_success_rate_pct": 53.333333333333336,
+      "pi05_minus_smolvla_pp": 53.333333333333336
+    },
+    {
+      "shoulder_lift_offset_deg": -6.0,
+      "noise_seed": 20261003,
+      "n_variations": 15,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "pi05_successes": 12,
+      "pi05_success_rate_pct": 80.0,
+      "pi05_minus_smolvla_pp": 73.33333333333333
+    },
+    {
+      "shoulder_lift_offset_deg": -6.0,
+      "noise_seed": 20261004,
+      "n_variations": 15,
+      "smolvla_successes": 0,
+      "smolvla_success_rate_pct": 0.0,
+      "pi05_successes": 0,
+      "pi05_success_rate_pct": 0.0,
+      "pi05_minus_smolvla_pp": 0.0
+    },
+    {
+      "shoulder_lift_offset_deg": -5.0,
+      "noise_seed": 20261002,
+      "n_variations": 15,
+      "smolvla_successes": 0,
+      "smolvla_success_rate_pct": 0.0,
+      "pi05_successes": 9,
+      "pi05_success_rate_pct": 60.0,
+      "pi05_minus_smolvla_pp": 60.0
+    },
+    {
+      "shoulder_lift_offset_deg": -5.0,
+      "noise_seed": 20261003,
+      "n_variations": 15,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "pi05_successes": 10,
+      "pi05_success_rate_pct": 66.66666666666666,
+      "pi05_minus_smolvla_pp": 60.0
+    },
+    {
+      "shoulder_lift_offset_deg": -5.0,
+      "noise_seed": 20261004,
+      "n_variations": 15,
+      "smolvla_successes": 0,
+      "smolvla_success_rate_pct": 0.0,
+      "pi05_successes": 0,
+      "pi05_success_rate_pct": 0.0,
+      "pi05_minus_smolvla_pp": 0.0
+    },
+    {
+      "shoulder_lift_offset_deg": -4.0,
+      "noise_seed": 20261002,
+      "n_variations": 15,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "pi05_successes": 7,
+      "pi05_success_rate_pct": 46.666666666666664,
+      "pi05_minus_smolvla_pp": 40.0
+    },
+    {
+      "shoulder_lift_offset_deg": -4.0,
+      "noise_seed": 20261003,
+      "n_variations": 15,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "pi05_successes": 12,
+      "pi05_success_rate_pct": 80.0,
+      "pi05_minus_smolvla_pp": 73.33333333333333
+    },
+    {
+      "shoulder_lift_offset_deg": -4.0,
+      "noise_seed": 20261004,
+      "n_variations": 15,
+      "smolvla_successes": 1,
+      "smolvla_success_rate_pct": 6.666666666666667,
+      "pi05_successes": 0,
+      "pi05_success_rate_pct": 0.0,
+      "pi05_minus_smolvla_pp": -6.666666666666667
+    },
+    {
+      "shoulder_lift_offset_deg": 5.0,
+      "noise_seed": 20261002,
+      "n_variations": 15,
+      "smolvla_successes": 10,
+      "smolvla_success_rate_pct": 66.66666666666666,
+      "pi05_successes": 2,
+      "pi05_success_rate_pct": 13.333333333333334,
+      "pi05_minus_smolvla_pp": -53.333333333333336
+    },
+    {
+      "shoulder_lift_offset_deg": 5.0,
+      "noise_seed": 20261003,
+      "n_variations": 15,
+      "smolvla_successes": 7,
+      "smolvla_success_rate_pct": 46.666666666666664,
+      "pi05_successes": 8,
+      "pi05_success_rate_pct": 53.333333333333336,
+      "pi05_minus_smolvla_pp": 6.666666666666667
+    },
+    {
+      "shoulder_lift_offset_deg": 5.0,
+      "noise_seed": 20261004,
+      "n_variations": 15,
+      "smolvla_successes": 14,
+      "smolvla_success_rate_pct": 93.33333333333333,
+      "pi05_successes": 0,
+      "pi05_success_rate_pct": 0.0,
+      "pi05_minus_smolvla_pp": -93.33333333333333
+    },
+    {
+      "shoulder_lift_offset_deg": 6.0,
+      "noise_seed": 20261002,
+      "n_variations": 15,
+      "smolvla_successes": 10,
+      "smolvla_success_rate_pct": 66.66666666666666,
+      "pi05_successes": 1,
+      "pi05_success_rate_pct": 6.666666666666667,
+      "pi05_minus_smolvla_pp": -60.0
+    },
+    {
+      "shoulder_lift_offset_deg": 6.0,
+      "noise_seed": 20261003,
+      "n_variations": 15,
+      "smolvla_successes": 8,
+      "smolvla_success_rate_pct": 53.333333333333336,
+      "pi05_successes": 7,
+      "pi05_success_rate_pct": 46.666666666666664,
+      "pi05_minus_smolvla_pp": -6.666666666666667
+    },
+    {
+      "shoulder_lift_offset_deg": 6.0,
+      "noise_seed": 20261004,
+      "n_variations": 15,
+      "smolvla_successes": 10,
+      "smolvla_success_rate_pct": 66.66666666666666,
+      "pi05_successes": 0,
+      "pi05_success_rate_pct": 0.0,
+      "pi05_minus_smolvla_pp": -66.66666666666666
+    }
+  ],
+  "exploratory_negative_aggregate": {
+    "offsets_deg": [
+      -6.0,
+      -5.0,
+      -4.0
+    ],
+    "n_trial_records": 135,
+    "both_success": 4,
+    "smolvla_only": 1,
+    "pi05_only": 54,
+    "both_fail": 76,
+    "mcnemar_exact_two_sided_p": 3.1086244689504383e-15,
+    "primary_inference": false,
+    "caveat": "The same variation_id and noise_seed units appear at multiple offsets, so pooled offset records are not treated as fully independent. Per-offset tests are the primary inference."
+  },
+  "interpretation_scope": {
+    "negative_shoulder_lift": "pi05 has a reproducible relative advantage over SmolVLA in the confirmed negative-offset conditions, but pi05 absolute success remains approximately 42-44 percent.",
+    "positive_shoulder_lift": "SmolVLA has a reproducible relative advantage over pi05 at +5 and +6 degrees.",
+    "global_superiority_claim": false
+  },
+  "input_result_locks": [
+    "configs/evaluation/locks/shoulder_lift_screening_v1_smolvla_confirmation_results.sha256",
+    "configs/evaluation/locks/shoulder_lift_screening_v1_pi05_confirmation_results.sha256"
+  ]
+}
