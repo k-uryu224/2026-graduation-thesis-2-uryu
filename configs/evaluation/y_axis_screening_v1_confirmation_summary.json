@@ -1,0 +1,17 @@
+{
+  "object_y_m": -0.005,
+  "trials_per_model": 45,
+  "smolvla_successes": 42,
+  "pi05_successes": 39,
+  "smolvla_success_rate": 0.9333333333333333,
+  "pi05_success_rate": 0.8666666666666667,
+  "paired": {
+    "both_success": 36,
+    "smolvla_only": 6,
+    "pi05_only": 3,
+    "both_fail": 0,
+    "discordant_pairs": 9,
+    "exact_mcnemar_two_sided_p": 0.5078125
+  },
+  "discovery_advantage_confirmed": false
+}
