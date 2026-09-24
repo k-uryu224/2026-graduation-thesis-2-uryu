@@ -225,26 +225,104 @@ def run_rollout(
     preprocessor.reset()
     postprocessor.reset()
 
-    original_object_y = float(gen.OBJECT_Y_M)
+    # Build the initial robot state from the original
+    # training condition (object y = 0).  Do not solve IK
+    # for the screening y position.
+    baseline_object_y = float(gen.OBJECT_Y_M)
 
-    try:
-        gen.OBJECT_Y_M = float(object_y)
-
-        observation, _ = (
-            base.build_raw_observation(
-                gen=gen,
-                physics=physics,
-                model=model,
-                data=data,
-                renderer=renderer,
-                dataset_config=dataset_config,
-                task=task,
-                variation=variation,
-                object_x=float(object_x),
-            )
+    if not math.isclose(
+        baseline_object_y,
+        0.0,
+        abs_tol=1e-12,
+    ):
+        raise RuntimeError(
+            f"Expected baseline object y=0, got "
+            f"{baseline_object_y}"
         )
-    finally:
-        gen.OBJECT_Y_M = original_object_y
+
+    observation, _ = (
+        base.build_raw_observation(
+            gen=gen,
+            physics=physics,
+            model=model,
+            data=data,
+            renderer=renderer,
+            dataset_config=dataset_config,
+            task=task,
+            variation=variation,
+            object_x=float(object_x),
+        )
+    )
+
+    # The robot is now at exactly the same initial state
+    # as the baseline evaluation. Perturb only the object.
+    screen_object_position = np.asarray(
+        [
+            float(object_x),
+            float(object_y),
+            float(gen.OBJECT_Z_M),
+        ],
+        dtype=float,
+    )
+
+    physics.set_object_position(
+        model,
+        data.qpos,
+        screen_object_position,
+    )
+
+    data.qvel[:] = 0.0
+
+    mujoco.mj_forward(
+        model,
+        data,
+    )
+
+    actual_object_y = float(
+        data.site_xpos[
+            object_site_id,
+            1,
+        ]
+    )
+
+    if not math.isclose(
+        actual_object_y,
+        float(object_y),
+        abs_tol=1e-9,
+    ):
+        raise RuntimeError(
+            f"Object y mismatch: requested="
+            f"{float(object_y):.9f}, "
+            f"actual={actual_object_y:.9f}"
+        )
+
+    # Rebuild the observation after moving only the object.
+    joint_names = list(
+        dataset_config["state"]["mujoco_joints"]
+    )
+
+    state = gen.get_state(
+        model,
+        data,
+        joint_names,
+    ).copy()
+
+    observation = {
+        "observation.state": state,
+    }
+
+    for camera in dataset_config["cameras"].values():
+        renderer.update_scene(
+            data,
+            camera=camera["mujoco_name"],
+        )
+
+        observation[
+            camera["lerobot_key"]
+        ] = (
+            renderer.render()
+            .copy()
+        )
 
     initial_state = (
         observation[
