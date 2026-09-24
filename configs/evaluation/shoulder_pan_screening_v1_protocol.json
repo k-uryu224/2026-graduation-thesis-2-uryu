@@ -1,0 +1,104 @@
+{
+  "id": "shoulder_pan_screening_v1",
+  "purpose": "Screen fixed SmolVLA and pi0.5 checkpoints for differential robustness to unseen initial shoulder_pan perturbations without retraining.",
+  "no_retraining": true,
+
+  "models": {
+    "smolvla": "outputs/train/smolvla_baseline_dense_x_v2/checkpoints/030000/pretrained_model",
+    "pi05": "outputs/train/pi05_teacher_dense_x_v2/checkpoints/030000/pretrained_model"
+  },
+
+  "base_condition": {
+    "object_x_m": 0.240,
+    "object_y_m": 0.0,
+    "object_z_m": 0.065,
+    "instruction": "Pick up the object.",
+    "perturbation_target": "initial_robot_state.shoulder_pan",
+    "perturbation_mode": "additive_offset_to_existing_variation_home_pose"
+  },
+
+  "training_home_joint_offset_range_deg": {
+    "shoulder_pan": {
+      "min": -1.949,
+      "max": 1.920
+    }
+  },
+
+  "shoulder_pan_additional_offsets_deg": [
+    -6.0,
+    -5.0,
+    -4.0,
+    0.0,
+    4.0,
+    5.0,
+    6.0
+  ],
+
+  "unseen_definition": {
+    "baseline_offset_deg": 0.0,
+    "unseen_offsets_deg": [
+      -6.0,
+      -5.0,
+      -4.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "note": "For absolute additional offsets of 4 degrees or more, every variation-specific final shoulder_pan home offset lies outside the observed training shoulder_pan home-offset range."
+  },
+
+  "rollout": {
+    "frames": 210,
+    "fps": 30,
+    "action_chunk_steps": 50,
+    "success_lift_threshold_m": 0.07,
+    "success_hold_frames": 15,
+    "ik_during_vla_rollout": false
+  },
+
+  "discovery": {
+    "variation_ids": [
+      "v00",
+      "v01",
+      "v02",
+      "v03",
+      "v04"
+    ],
+    "noise_seeds": [
+      20260925,
+      20260926
+    ],
+    "trials_per_offset_per_model": 10,
+    "candidate_rule": {
+      "pi05_min_successes_out_of_10": 7,
+      "pi05_minus_smolvla_min_successes": 3
+    }
+  },
+
+  "confirmation": {
+    "used_during_discovery": false,
+    "variation_ids": [
+      "v05",
+      "v06",
+      "v07",
+      "v08",
+      "v09",
+      "v10",
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v16",
+      "v17",
+      "v18",
+      "v19"
+    ],
+    "noise_seeds": [
+      20260927,
+      20260928,
+      20260929
+    ],
+    "trials_per_selected_offset_per_model": 45
+  }
+}
