@@ -1,0 +1,69 @@
+{
+  "stage": "discovery",
+  "candidate_rule": {
+    "pi05_min_successes_out_of_10": 7,
+    "pi05_minus_smolvla_min_successes": 3,
+    "baseline_offset_excluded": true
+  },
+  "rows": [
+    {
+      "shoulder_pan_offset_deg": -6.0,
+      "smolvla_successes": 0,
+      "pi05_successes": 0,
+      "success_difference_pi05_minus_smolvla": 0,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": -5.0,
+      "smolvla_successes": 1,
+      "pi05_successes": 3,
+      "success_difference_pi05_minus_smolvla": 2,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": -4.0,
+      "smolvla_successes": 3,
+      "pi05_successes": 5,
+      "success_difference_pi05_minus_smolvla": 2,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": 0.0,
+      "smolvla_successes": 6,
+      "pi05_successes": 8,
+      "success_difference_pi05_minus_smolvla": 2,
+      "is_perturbation_condition": false,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": 4.0,
+      "smolvla_successes": 1,
+      "pi05_successes": 6,
+      "success_difference_pi05_minus_smolvla": 5,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": 5.0,
+      "smolvla_successes": 3,
+      "pi05_successes": 5,
+      "success_difference_pi05_minus_smolvla": 2,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    },
+    {
+      "shoulder_pan_offset_deg": 6.0,
+      "smolvla_successes": 4,
+      "pi05_successes": 4,
+      "success_difference_pi05_minus_smolvla": 0,
+      "is_perturbation_condition": true,
+      "meets_candidate_rule": false
+    }
+  ],
+  "selected_shoulder_pan_offsets_deg": [],
+  "confirmation_required": false,
+  "reason": "No unseen shoulder_pan offset satisfied the pre-frozen discovery candidate rule."
+}
