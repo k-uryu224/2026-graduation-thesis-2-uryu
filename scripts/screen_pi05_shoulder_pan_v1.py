@@ -242,12 +242,17 @@ def run_rollout(
         )
     )
 
-    shoulder_pan_joint_name = "shoulder_pan"
-
-    if shoulder_pan_joint_name not in physics.ARM_JOINT_NAMES:
+    # home_joint_offsets_deg is ordered consistently with
+    # physics.ARM_JOINT_NAMES throughout the frozen dataset
+    # generator. Index 0 therefore corresponds to shoulder_pan.
+    if len(physics.ARM_JOINT_NAMES) < 1:
         raise RuntimeError(
-            "shoulder_pan not found in ARM_JOINT_NAMES"
+            "ARM_JOINT_NAMES is empty"
         )
+
+    shoulder_pan_joint_name = (
+        physics.ARM_JOINT_NAMES[0]
+    )
 
     shoulder_pan_qpos_address = gen.qpos_address(
         model,
