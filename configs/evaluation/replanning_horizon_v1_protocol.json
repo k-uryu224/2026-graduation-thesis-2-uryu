@@ -1,0 +1,72 @@
+{
+  "experiment_id": "replanning_horizon_v1",
+  "purpose": "Test whether closed-loop replanning frequency explains part of the performance difference between pi0.5 and SmolVLA.",
+  "stage": "exploratory_screening",
+
+  "models": {
+    "smolvla": "outputs/train/smolvla_baseline_dense_x_v2/checkpoints/030000/pretrained_model",
+    "pi05": "outputs/train/pi05_teacher_dense_x_v2/checkpoints/030000/pretrained_model"
+  },
+
+  "rollout": {
+    "frames": 210,
+    "fps": 30,
+    "chunk_size": 50,
+    "n_action_steps": [10, 50],
+    "script_or_ik_during_rollout": false
+  },
+
+  "task": {
+    "instruction": "Pick up the object.",
+    "object_x_m": 0.240,
+    "object_y_m": 0.0,
+    "object_z_m": 0.065
+  },
+
+  "shoulder_lift_offsets_deg": [
+    -5.0,
+    0.0,
+    5.0
+  ],
+
+  "offset_roles": {
+    "-5.0": "representative condition where pi0.5 showed a confirmed relative advantage",
+    "0.0": "baseline initial shoulder_lift condition",
+    "5.0": "representative condition where SmolVLA showed a confirmed relative advantage"
+  },
+
+  "variation_ids": [
+    "v00",
+    "v01",
+    "v02",
+    "v03",
+    "v04"
+  ],
+
+  "noise_seeds": [
+    20261005,
+    20261006
+  ],
+
+  "trials_per_model_horizon_offset": 10,
+  "total_trials": 120,
+
+  "success": {
+    "minimum_lift_delta_m": 0.07,
+    "hold_frames": 15
+  },
+
+  "comparison": {
+    "primary_factor": "n_action_steps",
+    "within_model_comparison": true,
+    "same_variation_ids_across_horizons": true,
+    "same_base_noise_seeds_across_horizons": true,
+    "note": "After the first replan, horizon=10 and horizon=50 consume the seeded noise sequence at different physical times. Therefore the experiment compares the complete closed-loop policies under different replanning horizons, not identical per-frame diffusion or flow noise."
+  },
+
+  "interpretation": {
+    "if_pi05_improves_at_10": "Long open-loop execution is a plausible contributor to the previously observed pi0.5 performance limitation.",
+    "if_pi05_does_not_improve": "The replanning-horizon explanation is weakened and action-response, noise sensitivity, normalization, and adaptation strategy should be investigated next.",
+    "exploratory_only": true
+  }
+}
