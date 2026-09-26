@@ -1,0 +1,51 @@
+{
+  "dataset_id": "lprd_shoulder_lift_poc_v1_training_data",
+  "purpose": "Training-only proof-of-concept data for comparing no-response, point-wise KD, and response-target KD.",
+
+  "source_protocol_tag": "lprd-shoulder-lift-poc-v1-protocol",
+  "source_teacher_response_tag": "lprd-shoulder-lift-poc-v1-teacher-response-results",
+
+  "teacher_response_path": "results/lprd_shoulder_lift_poc_v1/teacher_response/responses.npz",
+  "teacher_response_lock": "configs/evaluation/locks/lprd_shoulder_lift_poc_v1_teacher_response_results.sha256",
+
+  "object_x_m": 0.240,
+  "variation_ids": ["v00", "v01", "v02", "v03", "v04"],
+  "training_offsets_deg": [-6.0, -4.0],
+  "heldout_evaluation_offset_deg": -5.0,
+
+  "instruction": "Pick up the object.",
+  "robot_type": "so101_mujoco",
+
+  "observation": {
+    "time": "initial observation only",
+    "perturbation": "additive shoulder_lift qpos offset from the frozen variation-specific initial state",
+    "object_position_unchanged": true,
+    "store_raw_state": true,
+    "store_raw_top_image": true,
+    "store_raw_wrist_image": true
+  },
+
+  "targets": {
+    "no_response": "A_demo(reference)",
+    "pointwise_kd": "mean_z[A_pi05(perturbed,z)]",
+    "response_target": "A_demo(reference) + mean_z[A_pi05(perturbed,z) - A_pi05(reference,z)]"
+  },
+
+  "target_processing": {
+    "action_space": "physical postprocessed action space before SmolVLA preprocessing",
+    "shape": [50, 6],
+    "no_response": "use frozen demo action unchanged",
+    "pointwise_kd": "clip to actuator control range and record clipping",
+    "response_target": "use the already frozen clipped response target and preserve its preclip version for audit",
+    "normalization": "do not normalize in this dataset; SmolVLA checkpoint preprocessor performs MEAN_STD normalization during training"
+  },
+
+  "sample_count": 10,
+
+  "constraints": [
+    "The held-out -5deg condition must never be generated or stored in this training dataset.",
+    "Only v00-v04 may be used.",
+    "All three target modes must use exactly the same perturbed observations.",
+    "No rollout success result may be used while constructing this dataset."
+  ]
+}
