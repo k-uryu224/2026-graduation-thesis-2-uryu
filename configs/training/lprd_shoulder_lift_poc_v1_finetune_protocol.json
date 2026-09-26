@@ -1,0 +1,76 @@
+{
+  "experiment_id": "lprd_shoulder_lift_poc_v1_finetune",
+
+  "base_checkpoint": "outputs/train/smolvla_baseline_dense_x_v2/checkpoints/030000/pretrained_model",
+
+  "training_data": "results/lprd_shoulder_lift_poc_v1/training_data/training_samples.npz",
+  "training_data_lock": "configs/evaluation/locks/lprd_shoulder_lift_poc_v1_training_data_results.sha256",
+
+  "target_modes": {
+    "no_response": "target_no_response",
+    "pointwise_kd": "target_pointwise_kd",
+    "response_target": "target_response"
+  },
+
+  "control_interpretation": {
+    "no_response": "Matched PoC continued-training control: use exactly the same perturbed observations as the KD conditions, but pair them with the original reference demo action and no teacher-derived correction."
+  },
+
+  "data": {
+    "sample_count": 10,
+    "batch_size": 10,
+    "full_batch_training": true,
+    "shuffle": false,
+    "variation_ids": ["v00", "v01", "v02", "v03", "v04"],
+    "training_offsets_deg": [-6.0, -4.0],
+    "heldout_evaluation_offset_deg": -5.0
+  },
+
+  "optimization": {
+    "steps": 500,
+    "sample_exposures": 5000,
+    "optimizer": "adamw",
+    "learning_rate": 0.00001,
+    "betas": [0.9, 0.95],
+    "eps": 1e-08,
+    "weight_decay": 1e-10,
+    "grad_clip_norm": 10.0,
+    "scheduler": "constant"
+  },
+
+  "trainable_scope": {
+    "inherit_from_checkpoint": true,
+    "expected_freeze_vision_encoder": true,
+    "expected_train_expert_only": true,
+    "expected_train_state_proj": true
+  },
+
+  "stochastic_control": {
+    "training_seed": 20261021,
+    "same_initial_checkpoint_for_all_modes": true,
+    "same_sample_order_for_all_modes": true,
+    "same_flow_noise_and_time_schedule_for_all_modes": true,
+    "step_random_seed_rule": "training_seed + zero_based_step"
+  },
+
+  "checkpoint_selection": {
+    "save_final_only": true,
+    "selected_step": 500,
+    "no_selection_using_rollout_success": true
+  },
+
+  "evaluation_firewall": {
+    "minus5_used_during_training": false,
+    "evaluation_variations": [
+      "v05", "v06", "v07", "v08", "v09",
+      "v10", "v11", "v12", "v13", "v14",
+      "v15", "v16", "v17", "v18", "v19"
+    ],
+    "evaluation_noise_seeds": [
+      20261015,
+      20261016,
+      20261017
+    ],
+    "n_action_steps": 10
+  }
+}
