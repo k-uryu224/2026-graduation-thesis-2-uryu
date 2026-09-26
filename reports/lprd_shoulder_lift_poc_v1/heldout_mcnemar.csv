@@ -1,0 +1,4 @@
+role,policy_a,policy_b,both_success,a_only_success,b_only_success,both_fail,discordant,mcnemar_exact_two_sided_p
+primary,response_target,frozen_base,0,0,3,42,3,0.25
+secondary,response_target,no_response,0,0,0,45,0,1.0
+secondary,response_target,pointwise_kd,0,0,0,45,0,1.0
